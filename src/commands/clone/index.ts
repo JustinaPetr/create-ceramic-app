@@ -43,7 +43,7 @@ export default class DefaultCommand extends Command {
     // Clone repository from https://github.com/ceramicstudio/ComposeDbExampleApp.git
     sp.start('Cloning CeramicDB Example App from repository...')
     try {
-      await tiged('https://github.com/ceramicstudio/ComposeDbExampleApp.git').clone(projectName)
+      await tiged('https://github.com/JustinaPetr/ComposeDbExampleApp.git').clone(projectName)
     } catch (error) {
       console.error('Error occurred while cloning the repository:', error)
     }
@@ -54,7 +54,7 @@ export default class DefaultCommand extends Command {
     sp.start('⬇️ Installing dependencies...')
     try {
       process.chdir(projectName)
-      execSync('npm install --loglevel=error', {stdio: 'inherit'}) // npm install and suppress all warnings
+      execSync('brew bundle & npm install --loglevel=error', {stdio: 'inherit'}) // npm install and suppress all warnings
       process.chdir('..')
     } catch (error) {
       console.error('Error occurred while installing dependencies:', error)
